@@ -35,7 +35,7 @@ npm run preview
 | Live GitHub repository integration + fallback | done |
 | Sections: hero, about, skills, projects, experience, contact, footer | done |
 | Responsive layout, reduced-motion support, SEO meta | done |
-| Avatar wired to `public/avatar.jpg` | done |
+| Avatar wired to `public/avatar.jpg`, also used as the site icon (§3) | done |
 | `master_cv.json` | **untracked on purpose** — see §7 |
 | Deployment to Vercel/Netlify | **not started** |
 
@@ -87,10 +87,26 @@ Background `#0c0c0e` · surface `#161618` · elevated `#1c1c1f` · border `#3838
 lights · faint blueprint grid behind the hero · hairline section rules ·
 `$ whoami` typing effect.
 
+### Icons
+
+The browser icon is the avatar itself, traced to vector — the earlier pixel "MB"
+`favicon.svg` has been deleted.
+
+- `public/avatar.svg` is a **real vector** (potrace), not a bitmap wrapped in an
+  SVG: `public/avatar.jpg` → grayscale → 512² → 58% threshold → `potrace -s`
+  (`--turdsize 30 --alphamax 1.0 --opttolerance 0.4`). It is a flat two-tone
+  trace — a `#0c0c0e` rect plus white shapes — so it sits on the site's own dark
+  background and stays crisp at any size.
+- `public/avatar.jpg` stays the **source of truth**. If the photo changes,
+  regenerate the SVG from it rather than hand-editing the path data.
+- `apple-touch-icon.png` (180²) and `icon-32.png` (32²) are raster exports of the
+  same JPG, because iOS home-screen icons do not accept SVG and legacy engines
+  ignore it. `index.html` links all three.
+
 ## 4. File map
 
 ```
-index.html                     SEO meta, title, favicon
+index.html                     SEO meta, title, avatar icons
 src/
   main.tsx                     entry; imports IBM Plex weights + index.css
   App.tsx                      section order
@@ -111,8 +127,10 @@ src/
     Experience.tsx Contact.tsx Footer.tsx
     ui/  Section.tsx  Figure.tsx  Reveal.tsx  PixelText.tsx
 public/
-  avatar.jpg                   profile photo
-  favicon.svg                  pixel "MB" mark
+  avatar.jpg                   profile photo — source of truth (§3 Icons)
+  avatar.svg                   vector trace of avatar.jpg, used as the favicon
+  apple-touch-icon.png         180² raster export, iOS home screen
+  icon-32.png                  32² raster export, favicon fallback
 ```
 
 ## 5. How content works

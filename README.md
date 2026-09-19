@@ -27,7 +27,11 @@ Projects are pulled **live from the GitHub API** and ranked by
 `github.preferredOrder`, then stars, then recency. A curated snapshot in
 `src/data/fallback-repos.ts` is shown first and kept if the API is rate limited.
 
-Your photo goes in `public/avatar.jpg`, referenced by `info.avatar`.
+Your photo goes in `public/avatar.jpg`, referenced by `info.avatar`. That same
+image is the tab icon: `public/avatar.svg` is a true vector trace of the JPG, and
+`apple-touch-icon.png` / `icon-32.png` are raster exports of it for iOS and old
+browsers. Regenerate all three from the JPG if you change the photo — see
+[PLAN.md §3](./PLAN.md).
 
 ## Design notes
 

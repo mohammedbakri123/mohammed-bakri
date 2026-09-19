@@ -17,7 +17,7 @@ function initialsOf(name: string): string {
 }
 
 /**
- * About — avatar (falls back to pixel initials when `public/avatar.png` is
+ * About — avatar (falls back to pixel initials when `public/avatar.jpg` is
  * missing), the bio, and a few quick facts.
  */
 export function About() {
