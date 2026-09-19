@@ -216,10 +216,7 @@ export function Header() {
               {theme === "dark" ? "☀" : "☾"}
             </button>
 
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border-muted bg-surface/80 px-2.5 py-1 font-mono text-[10px] text-fg-secondary">
-              <span className="size-1.5 rounded-full bg-success animate-pulse" />
-              <span>Sana'a</span>
-            </span>
+           
           </div>
         </div>
       </header>
