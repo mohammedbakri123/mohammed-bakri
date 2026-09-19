@@ -1,8 +1,0 @@
-{
-  "name": "Murasala App Layouts",
-  "id": "murasala-app-layouts-dev",
-  "api": "1.0.0",
-  "main": "code.js",
-  "editorType": ["figma"],
-  "documentAccess": "dynamic-page"
-}
