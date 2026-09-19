@@ -62,13 +62,17 @@ Instead `src/components/ui/PixelText.tsx` renders text as SVG blocks:
 - The glyphs `O P E N C D` were transcribed **cell-for-cell** from the wordmark
   served at `opencode.ai` (samples rendered with `rsvg-convert` and read back
   pixel-by-pixel).
-- `M H A B K R I` were drawn in the same block language, since opencode's logo
-  only contains the letters of "OPENCODE".
+- The remaining 20 letters were drawn in the same block language, since
+  opencode's logo only contains the letters of "OPENCODE". The full A–Z set is
+  present; digits and punctuation fall back to a space.
+- `M` and `W` are one column wider than the other glyphs, so `layout()` measures
+  each glyph rather than trusting its first row.
 - The stroke colour sweeps translucent → solid left-to-right, matching the
   gradient in their logo. It is built from `currentColor`, so the wordmark
   follows the inherited text colour.
 - To add glyphs, extend the `GLYPHS` map: `#` = stroke, `o` = light inner fill,
-  `.` = empty. Rows are 7 tall (0 = ascender, 1–5 = cap body, 6 = descender).
+  `.` = empty. Rows are 7 tall (0 = ascender, 1–5 = cap body, 6 = descender) and
+  every row of a glyph must be the same width.
 
 ### Colour tokens (`src/index.css`, `@theme`)
 

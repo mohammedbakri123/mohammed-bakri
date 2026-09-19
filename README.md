@@ -35,7 +35,7 @@ Your photo goes in `public/avatar.jpg`, referenced by `info.avatar`.
   the custom properties opencode publish.
 - The pixel wordmark is **not a font** — opencode's logo is hand-drawn SVG, so
   `src/components/ui/PixelText.tsx` renders block glyphs as inline SVG. Its
-  `O P E N C D` were transcribed from opencode's own wordmark; the remaining
-  letters were drawn to match.
+  `O P E N C D` were transcribed from opencode's own wordmark; the rest of the
+  alphabet was drawn to match.
 
 See **[PLAN.md](./PLAN.md)** for the full background, decisions and open tasks.
