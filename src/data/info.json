@@ -1,0 +1,155 @@
+{
+  "_readme": "This is your content file. Edit anything here — the site reads all personal data from this JSON plus live GitHub data. Fields still needing your input are marked PLACEHOLDER.",
+  "name": "Mohammed Bakri",
+  "handle": "mohammedbakri123",
+  "wordmark": ["MOHAMMED", "BAKRI"],
+  "role": "Software Developer · Backend & AI-Powered Applications",
+  "intro": "Founder of Tabib",
+  "location": "Sana'a, Yemen",
+  "email": "mohaa.b.4321@gmail.com",
+  "avatar": "/avatar.jpg",
+  "openToWork": true,
+  "tagline": "Building scalable software and practical AI-powered solutions.",
+  "bio": [
+    "I'm Mohammed — a computer science student and software developer based in Sana'a, Yemen. I build web applications, REST APIs, database-driven systems and mobile apps, and I'm happiest working on the backend.",
+    "Most of my time goes into Tabib, a clinic management system I founded and build end-to-end. Alongside that I work across ASP.NET Core, React and TypeScript, Flutter, and practical AI applications with Python, NumPy and Scikit-learn.",
+    "I'm interested in software architecture, scalable systems and machine learning — especially the places where those three meet."
+  ],
+  "facts": [
+    { "label": "Founded", "value": "Tabib — clinic management system" },
+    { "label": "Studying", "value": "BSc Computer Science, Sana'a University (2023—2027)" },
+    { "label": "Focus", "value": "Backend · REST APIs · AI-powered apps" },
+    { "label": "Open source", "value": "MPx-player — 45 ★ on GitHub" }
+  ],
+  "terminal": {
+    "command": "whoami",
+    "output": [
+      "mohammed-bakri",
+      "software developer · backend & ai-powered applications",
+      "cs student @ sana'a university · founder of tabib"
+    ]
+  },
+  "socials": [
+    { "label": "GitHub", "handle": "@mohammedbakri123", "url": "https://github.com/mohammedbakri123" },
+    { "label": "LinkedIn", "handle": "in/mohammed-bakri", "url": "https://linkedin.com/in/mohammed-bakri-b82781320" },
+    { "label": "X", "handle": "@IceBear160", "url": "https://x.com/IceBear160" },
+    { "label": "Tabib", "handle": "tabib.bond", "url": "https://tabib.bond" }
+  ],
+  "skills": [
+    {
+      "group": "Languages",
+      "items": ["Python", "C#", "TypeScript", "JavaScript", "PHP", "Dart"]
+    },
+    {
+      "group": "Backend",
+      "items": ["ASP.NET Core", "REST APIs", "JWT auth", "Entity Framework Core"]
+    },
+    {
+      "group": "Frontend",
+      "items": ["React", "Tailwind CSS", "HTML", "CSS"]
+    },
+    {
+      "group": "Mobile",
+      "items": ["Flutter", "Dart", "Android"]
+    },
+    {
+      "group": "Databases",
+      "items": ["SQL Server", "MySQL", "Supabase"]
+    },
+    {
+      "group": "AI & ML",
+      "items": ["NumPy", "Scikit-learn", "NLP", "Computer Vision"]
+    },
+    {
+      "group": "Architecture",
+      "items": ["OOP", "Clean Architecture", "Security fundamentals"]
+    },
+    {
+      "group": "Tools",
+      "items": ["Git", "GitHub", "Visual Studio", "Postman"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Engineer",
+      "company": "Tabib",
+      "url": "https://tabib.bond",
+      "period": "Present",
+      "location": "Remote",
+      "summary": "Clinic management system (نظام إدارة العيادات) covering scheduling, patient records, prescriptions and reporting.",
+      "highlights": [
+        "Designed the domain model and API surface, then built the product on top of it.",
+        "Shipped an Arabic-first interface for clinic staff and doctors."
+      ]
+    },
+    {
+      "role": "BSc Computer Science",
+      "company": "Sana'a University",
+      "url": "https://github.com/mohammedbakri123",
+      "period": "2023 — 2027 (expected)",
+      "location": "Sana'a, Yemen",
+      "summary": "Currently studying computer science, with coursework and self-directed work focused on software engineering and backend development.",
+      "highlights": [
+        "Focus areas: software architecture, databases and scalable systems.",
+        "Building projects alongside the degree to apply what I learn."
+      ]
+    },
+    {
+      "role": "Open source & independent projects",
+      "company": "Self-directed",
+      "url": "https://github.com/mohammedbakri123",
+      "period": "Ongoing",
+      "location": "Remote",
+      "summary": "A body of full-stack, backend and mobile work built end-to-end across ASP.NET Core, React, TypeScript and Flutter.",
+      "highlights": [
+        "MPx-player — Android media player built on mpv, 45 ★ on GitHub.",
+        "Pharma-core — full-stack system with a .NET API and a React client.",
+        "Inventory management, e-commerce API and other business applications."
+      ]
+    }
+  ],
+  "featured": [
+    {
+      "name": "Tabib",
+      "tagline": "Clinic management system",
+      "description": "Arabic-first clinic management platform — appointments, patient records, prescriptions and reporting. Founded, designed and built end-to-end.",
+      "url": "https://tabib.bond",
+      "status": "Live",
+      "tags": [".NET", "React", "PostgreSQL"],
+      "highlight": true
+    },
+    {
+      "name": "MPx-player",
+      "tagline": "Android media player built on mpv",
+      "description": "A media player for Android built on top of mpv, with a UI that stays out of the way. 45 ★ and counting — my most popular open-source project.",
+      "url": "https://github.com/mohammedbakri123/MPx-player",
+      "status": "Open source",
+      "tags": ["Flutter", "Dart", "mpv"]
+    }
+  ],
+  "github": {
+    "username": "mohammedbakri123",
+    "maxProjects": 9,
+    "includeForks": false,
+    "exclude": [
+      "mohammed-bakri",
+      "mohammedbakri123",
+      "React-portfolio",
+      "html-css-js-portfolio"
+    ],
+    "preferredOrder": [
+      "MPx-player",
+      "Pharma-core-server",
+      "Pharma-core-client",
+      "TicketFlow",
+      "The-Wild-Oasis",
+      "E-commerce-Backend",
+      "inventory-managment",
+      "Nexus",
+      "mini-loura"
+    ]
+  },
+  "footer": {
+    "text": "Designed and built with React, Vite and Tailwind CSS. Typography borrowed from opencode."
+  }
+}
