@@ -30,6 +30,7 @@
     ]
   },
   "socials": [
+    { "label": "WhatsApp", "handle": "+967 774 446 941", "url": "https://wa.me/967774446941" },
     { "label": "GitHub", "handle": "@mohammedbakri123", "url": "https://github.com/mohammedbakri123" },
     { "label": "LinkedIn", "handle": "in/mohammed-bakri", "url": "https://linkedin.com/in/mohammed-bakri-b82781320" },
     { "label": "X", "handle": "@IceBear160", "url": "https://x.com/IceBear160" },

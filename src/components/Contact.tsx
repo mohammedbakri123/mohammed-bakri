@@ -30,18 +30,31 @@ export function Contact() {
             open.
           </p>
 
-          {email ? (
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            {email ? (
+              <a
+                href={`mailto:${email}`}
+                className="inline-flex items-center gap-2 rounded-[4px] bg-fg px-4 py-2.5 font-mono text-xs font-medium tracking-wide text-bg transition-colors hover:bg-white"
+              >
+                <span>{email}</span>
+                <span>↗</span>
+              </a>
+            ) : (
+              <p className="inline-flex rounded-[4px] border border-border-muted px-4 py-2.5 font-mono text-xs text-fg-disabled">
+                set "email" in src/data/info.json to show a mailto link
+              </p>
+            )}
+
             <a
-              href={`mailto:${email}`}
-              className="mt-8 inline-flex rounded-[4px] bg-fg px-4 py-2.5 font-mono text-xs font-medium tracking-wide text-bg transition-colors hover:bg-white"
+              href="https://wa.me/967774446941"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-[4px] border border-border-muted bg-surface px-4 py-2.5 font-mono text-xs font-medium tracking-wide text-fg transition-colors hover:border-fg"
             >
-              {email} ↗
+              <span className="size-1.5 rounded-full bg-success" />
+              <span>WhatsApp: +967 774 446 941 ↗</span>
             </a>
-          ) : (
-            <p className="mt-8 inline-flex rounded-[4px] border border-border-muted px-4 py-2.5 font-mono text-xs text-fg-disabled">
-              set "email" in src/data/info.json to show a mailto link
-            </p>
-          )}
+          </div>
         </div>
 
         <ul className="flex flex-col gap-3">
@@ -66,7 +79,7 @@ export function Contact() {
       </div>
 
       <Figure n={FIG.contact} className="mt-10 text-fg-muted">
-        Fastest reply on GitHub or X
+        Fastest reply on WhatsApp or GitHub
       </Figure>
     </Section>
   );

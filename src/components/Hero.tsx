@@ -30,6 +30,7 @@ const TERMINAL_DATA: Record<TerminalTab, { command: string; output: string[] }> 
   contact: {
     command: "curl -s api/contact",
     output: [
+      `whatsapp: +967 774 446 941 (https://wa.me/967774446941)`,
       `email: ${info.email}`,
       `location: ${info.location} (UTC+3)`,
       `github: https://github.com/${info.handle}`,

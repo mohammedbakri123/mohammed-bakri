@@ -315,6 +315,20 @@ export function Header() {
               </button>
 
               <a
+                href="https://wa.me/967774446941"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setActionsOpen(false)}
+                className="flex items-center justify-between py-2 px-3 rounded-[4px] bg-surface hover:bg-elevated text-fg transition-colors border border-border-muted"
+              >
+                <span className="flex items-center gap-2">
+                  <span className="size-1.5 rounded-full bg-success" />
+                  <span>WhatsApp</span>
+                </span>
+                <span className="text-fg-secondary text-[11px]">+967 774 446 941 ↗</span>
+              </a>
+
+              <a
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noreferrer"
