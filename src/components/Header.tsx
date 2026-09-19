@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Sun, Moon } from "lucide-react";
 import { info } from "@/data/info";
 import { cn } from "@/lib/cn";
 import { PixelText } from "./ui/PixelText";
@@ -189,7 +190,11 @@ export function Header() {
                 aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
                 className="flex items-center gap-1.5 rounded-[4px] border border-border-muted bg-surface px-2.5 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-border hover:text-fg"
               >
-                <span>{theme === "dark" ? "☀" : "☾"}</span>
+                {theme === "dark" ? (
+                  <Sun className="size-3.5 text-fg-secondary" />
+                ) : (
+                  <Moon className="size-3.5 text-fg-secondary" />
+                )}
                 <span className="text-[11px]">{theme === "dark" ? "light" : "dark"}</span>
               </button>
 
@@ -211,9 +216,13 @@ export function Header() {
               type="button"
               onClick={() => toggleTheme()}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="flex items-center justify-center size-8 rounded-[4px] border border-border-muted bg-surface text-xs text-fg-secondary"
+              className="flex items-center justify-center size-8 rounded-[4px] border border-border-muted bg-surface text-fg-secondary transition-colors hover:border-border hover:text-fg"
             >
-              {theme === "dark" ? "☀" : "☾"}
+              {theme === "dark" ? (
+                <Sun className="size-4" />
+              ) : (
+                <Moon className="size-4" />
+              )}
             </button>
 
            
@@ -293,7 +302,11 @@ export function Header() {
                 className="w-full flex items-center justify-between py-2 px-3 rounded-[4px] bg-surface hover:bg-elevated text-fg transition-colors border border-border-muted text-left"
               >
                 <span className="flex items-center gap-2">
-                  <span>{theme === "dark" ? "☀" : "☾"}</span>
+                  {theme === "dark" ? (
+                    <Sun className="size-3.5 text-fg-secondary" />
+                  ) : (
+                    <Moon className="size-3.5 text-fg-secondary" />
+                  )}
                   <span>Theme</span>
                 </span>
                 <span className="text-fg-muted text-[10px] uppercase">
