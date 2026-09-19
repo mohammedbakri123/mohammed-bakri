@@ -1,0 +1,487 @@
+{
+  "profile_version": "1.0",
+  "profile_type": "Ultimate Professional Developer Profile",
+
+  "identity": {
+    "full_name": "Mohammed Bakri",
+    "location": {
+      "city": "Sana'a",
+      "country": "Yemen"
+    },
+    "contact": {
+      "phone": "+967 774 446 941",
+      "email": "mohaa.b.4321@gmail.com"
+    },
+    "professional_links": {
+      "github": {
+        "username": "mohammedbakri123",
+        "url": "https://github.com/mohammedbakri123"
+      },
+      "linkedin": {
+        "url": "https://linkedin.com/in/mohammed-bakri-b82781320"
+      }
+    }
+  },
+
+  "professional_identity": {
+    "headline": "Software Developer | Backend Developer | AI-Powered Application Developer",
+    "current_status": [
+      "Computer Science Student",
+      "Software Developer",
+      "AI and Machine Learning Practitioner"
+    ],
+    "career_stage": "Early-career developer with practical project experience",
+    "professional_summary": "Computer Science student and software developer with experience building web applications, REST APIs, database-driven systems, mobile applications, and AI-powered tools. Strong interest in backend development, software architecture, scalable systems, machine learning, and practical AI applications.",
+
+    "primary_focus_areas": [
+      "Backend Development",
+      "Software Engineering",
+      "AI-Powered Applications",
+      "Machine Learning",
+      "REST API Development",
+      "Database Systems"
+    ]
+  },
+
+  "education": {
+    "degree": "Bachelor of Computer Science",
+    "institution": "Sana'a University",
+    "start_year": 2023,
+    "expected_graduation_year": 2027,
+    "status": "Currently studying"
+  },
+
+  "technical_skills": {
+    "programming_languages": [
+      "Python",
+      "C#",
+      "PHP",
+      "JavaScript",
+      "TypeScript",
+      "Dart"
+    ],
+
+    "backend_development": {
+      "technologies": [
+        "ASP.NET Core",
+        "C#",
+        "PHP"
+      ],
+      "skills": [
+        "REST API Development",
+        "Authentication",
+        "Authorization",
+        "JWT Authentication",
+        "Entity Framework Core",
+        "API Integration",
+        "Backend Architecture"
+      ]
+    },
+
+    "frontend_development": {
+      "technologies": [
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS"
+      ],
+      "skills": [
+        "Web Application Development",
+        "Frontend Development",
+        "Frontend-Backend Integration"
+      ]
+    },
+
+    "mobile_development": {
+      "technologies": [
+        "Flutter",
+        "Dart"
+      ],
+      "skills": [
+        "Mobile Application Development",
+        "Android Application Development",
+        "Media Application Development"
+      ]
+    },
+
+    "databases": {
+      "technologies": [
+        "MySQL",
+        "SQL Server",
+        "Supabase"
+      ],
+      "skills": [
+        "Database Design",
+        "Database Integration",
+        "Database-Driven Applications"
+      ]
+    },
+
+    "ai_and_machine_learning": {
+      "professional_description": "Able to effectively use AI tools and build practical AI-powered tools and applications.",
+
+      "programming_and_libraries": [
+        "Python",
+        "NumPy",
+        "Scikit-learn"
+      ],
+
+      "areas_of_knowledge": [
+        "Machine Learning",
+        "Natural Language Processing",
+        "Computer Vision",
+        "AI Agents"
+      ],
+
+      "capabilities": [
+        "Using AI tools efficiently",
+        "Building AI-powered tools",
+        "Integrating AI capabilities into software applications",
+        "Applying machine learning techniques",
+        "Working with Natural Language Processing applications",
+        "Working with Computer Vision applications",
+        "Working with AI Agents"
+      ],
+
+      "focus": [
+        "Practical AI Applications",
+        "AI-Powered Software",
+        "Machine Learning",
+        "Intelligent Tools"
+      ]
+    },
+
+    "software_engineering": {
+      "knowledge": [
+        "Object-Oriented Programming",
+        "Software Architecture",
+        "Clean Architecture Principles",
+        "Application Security Fundamentals",
+        "Performance Optimization Fundamentals"
+      ]
+    },
+
+    "developer_tools": [
+      "Git",
+      "GitHub",
+      "Visual Studio",
+      "Visual Studio Code",
+      "Postman"
+    ]
+  },
+
+  "projects": [
+    {
+      "name": "Inventory Management System",
+      "category": "Full-Stack Business Application",
+      "domain": "Inventory and Stock Management",
+
+      "description": "A comprehensive inventory and stock management platform.",
+
+      "features": [
+        "Inventory Tracking",
+        "Stock Management",
+        "Sales Workflows",
+        "Reporting",
+        "Authentication",
+        "API Integrations"
+      ],
+
+      "technology_stack": {
+        "backend": [
+          "ASP.NET Core",
+          "C#"
+        ],
+        "database": [
+          "SQL Server"
+        ],
+        "frontend": [
+          "React",
+          "TypeScript"
+        ]
+      },
+
+      "demonstrated_skills": [
+        "Full-Stack Development",
+        "Backend Development",
+        "Database Integration",
+        "Business Logic",
+        "Authentication",
+        "API Integration"
+      ]
+    },
+
+    {
+      "name": "E-Commerce Backend API",
+      "category": "Backend Service",
+      "domain": "E-Commerce",
+
+      "description": "A RESTful backend API for managing products, authentication, authorization, and order processing.",
+
+      "features": [
+        "Product Management",
+        "Authentication",
+        "Authorization",
+        "Order Processing"
+      ],
+
+      "architecture": [
+        "RESTful API Design",
+        "Clean Architecture Principles"
+      ],
+
+      "technology_stack": [
+        "ASP.NET Core",
+        "C#",
+        "SQL Server"
+      ],
+
+      "demonstrated_skills": [
+        "Backend Engineering",
+        "REST APIs",
+        "Authentication",
+        "Authorization",
+        "Database Development",
+        "Software Architecture"
+      ]
+    },
+
+    {
+      "name": "MPx Player",
+      "category": "Mobile Application",
+      "platform": "Android",
+
+      "description": "A media player application with media playback functionality and a modern user interface.",
+
+      "features": [
+        "Media Playback",
+        "Modern User Interface"
+      ],
+
+      "technology_stack": [
+        "Flutter",
+        "Dart"
+      ],
+
+      "demonstrated_skills": [
+        "Mobile Development",
+        "Flutter Development",
+        "UI Development",
+        "Media Application Development"
+      ]
+    },
+
+    {
+      "name": "The Wild Oasis",
+      "category": "Web Application",
+
+      "description": "A web application with authentication and cloud database integration.",
+
+      "features": [
+        "Authentication",
+        "Cloud Database Integration"
+      ],
+
+      "technology_stack": [
+        "React",
+        "TypeScript",
+        "Supabase"
+      ],
+
+      "demonstrated_skills": [
+        "Frontend Development",
+        "Authentication",
+        "Cloud Database Integration",
+        "Modern Web Development"
+      ]
+    }
+  ],
+
+  "core_capabilities": {
+    "software_development": [
+      "Building Web Applications",
+      "Building REST APIs",
+      "Building Database-Driven Systems",
+      "Building Mobile Applications",
+      "Designing Backend Systems"
+    ],
+
+    "ai_capabilities": [
+      "Using AI Tools Efficiently",
+      "Building AI-Powered Tools",
+      "Applying Machine Learning",
+      "Working with NLP",
+      "Working with Computer Vision",
+      "Working with AI Agents"
+    ],
+
+    "engineering_capabilities": [
+      "Database Design",
+      "API Integration",
+      "Object-Oriented Programming",
+      "Authentication and Authorization",
+      "Software Architecture",
+      "Application Security Fundamentals",
+      "Performance Optimization Fundamentals"
+    ]
+  },
+
+  "technology_ecosystems": {
+    "microsoft_dotnet": [
+      "C#",
+      "ASP.NET Core",
+      "Entity Framework Core",
+      "SQL Server"
+    ],
+
+    "javascript_ecosystem": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS"
+    ],
+
+    "python_ai_ecosystem": [
+      "Python",
+      "NumPy",
+      "Scikit-learn"
+    ],
+
+    "mobile_ecosystem": [
+      "Flutter",
+      "Dart"
+    ]
+  },
+
+  "professional_strengths": {
+    "technical_strengths": [
+      "Backend Development",
+      "REST API Development",
+      "Database Systems",
+      "Authentication and Authorization",
+      "Full-Stack Development",
+      "Mobile Development",
+      "AI-Powered Applications"
+    ],
+
+    "profile_advantages": [
+      "Experience across backend, frontend, mobile, databases, and AI",
+      "Ability to combine traditional software engineering with AI capabilities",
+      "Experience with multiple technology ecosystems",
+      "Interest in scalable software solutions",
+      "Practical project-based development experience"
+    ]
+  },
+
+  "career_direction": {
+    "primary_specialization": "Backend and Software Engineering",
+
+    "secondary_specializations": [
+      "AI-Powered Application Development",
+      "Machine Learning Applications",
+      "Full-Stack Development"
+    ],
+
+    "potential_roles": [
+      "Junior Software Engineer",
+      "Junior Backend Developer",
+      "ASP.NET Core Developer",
+      "Full-Stack Developer",
+      "AI Application Developer",
+      "Machine Learning Developer",
+      "Python Developer"
+    ],
+
+    "long_term_paths": [
+      "Software Engineer",
+      "Backend Engineer",
+      "AI Engineer",
+      "Machine Learning Engineer",
+      "Software Architect",
+      "Solutions Architect"
+    ]
+  },
+
+  "languages": [
+    {
+      "language": "Arabic",
+      "proficiency": "Native"
+    },
+    {
+      "language": "English",
+      "proficiency": "Professional Working Proficiency"
+    }
+  ],
+
+  "developer_profile": {
+    "profile_type": "Multi-disciplinary Software Developer",
+    "experience_scope": [
+      "Backend",
+      "Frontend",
+      "Databases",
+      "Mobile",
+      "Machine Learning",
+      "AI-Powered Applications"
+    ],
+
+    "best_combination": {
+      "description": "Combining software engineering and backend development with practical AI capabilities.",
+      "potential_value": "Building complete software products that integrate APIs, databases, web interfaces, mobile applications, and AI-powered functionality."
+    }
+  },
+
+  "personal_branding": {
+    "short_headline": "Software Developer | Backend | AI-Powered Applications",
+
+    "linkedin_headline": "Computer Science Student | Software Developer | Backend & ASP.NET Core | AI-Powered Applications | Python & Machine Learning",
+
+    "professional_tagline": "Building scalable software and practical AI-powered solutions.",
+
+    "elevator_pitch": "I am a Computer Science student and software developer with experience in backend systems, REST APIs, web applications, databases, mobile development, and AI-powered tools. I work with technologies including ASP.NET Core, C#, React, TypeScript, Python, NumPy, and Scikit-learn, with knowledge of NLP, Computer Vision, and AI Agents."
+  },
+
+  "data_sources": {
+    "cv_verified_information": [
+      "Personal and contact information",
+      "Education",
+      "Backend technologies",
+      "Frontend technologies",
+      "Mobile technologies",
+      "Databases",
+      "Developer tools",
+      "Relevant knowledge",
+      "Languages",
+      "Four listed projects"
+    ],
+
+    "user_reported_information": [
+      "Ability to use AI tools efficiently",
+      "Ability to build AI-powered tools",
+      "Python",
+      "NumPy",
+      "Scikit-learn",
+      "Natural Language Processing",
+      "Computer Vision",
+      "AI Agents"
+    ]
+  },
+
+  "unknown_or_not_yet_documented": {
+    "items": [
+      "Professional work experience",
+      "Exact years of programming experience",
+      "Specific AI and machine learning projects",
+      "Exact proficiency level for every technology",
+      "Certifications",
+      "Awards",
+      "Internships",
+      "Cloud platform experience",
+      "Docker and containerization experience",
+      "Production deployment experience",
+      "MLOps experience"
+    ],
+    "note": "These are intentionally not assumed or invented."
+  }
+}
