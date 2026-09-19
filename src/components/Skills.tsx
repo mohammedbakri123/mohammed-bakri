@@ -16,8 +16,8 @@ export function Skills() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {info.skills.map((group, index) => (
           <Reveal key={group.group} delay={index * 60}>
-            <div className="h-full rounded-lg border border-border bg-surface p-5 transition-colors hover:border-border-muted">
-              <p className="font-mono text-[11px] tracking-[0.16em] text-accent uppercase">
+            <div className="h-full rounded-[4px] border border-border-muted bg-surface p-5 transition-colors hover:border-border">
+              <p className="font-mono text-[11px] tracking-[0.16em] text-fg-muted uppercase">
                 [*] {group.group}
               </p>
               <ul className="mt-4 space-y-2">

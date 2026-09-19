@@ -26,8 +26,10 @@ export function Projects() {
           <Reveal key={project.name} delay={index * 70}>
             <article
               className={cn(
-                "flex h-full flex-col rounded-lg border bg-surface p-6",
-                project.highlight ? "border-accent/60" : "border-border",
+                "flex h-full flex-col rounded-[4px] border bg-surface p-6 transition-all duration-200",
+                project.highlight
+                  ? "border-fg/30 hover:border-fg"
+                  : "border-border-muted hover:border-border",
               )}
             >
               <div className="flex items-start justify-between gap-4">
@@ -37,18 +39,18 @@ export function Projects() {
                   </h3>
                   <p className="mt-1 text-sm text-fg-muted">{project.tagline}</p>
                 </div>
-                <span className="shrink-0 rounded-sm border border-border px-2 py-1 font-mono text-[10px] tracking-[0.14em] text-fg-disabled uppercase">
+                <span className="shrink-0 rounded-[3px] border border-border-muted px-2 py-0.5 font-mono text-[10px] tracking-[0.14em] text-fg-muted uppercase">
                   {project.status}
                 </span>
               </div>
 
-              <p className="mt-4 text-fg-secondary">{project.description}</p>
+              <p className="mt-4 text-fg-secondary leading-relaxed">{project.description}</p>
 
               <ul className="mt-5 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-sm bg-elevated px-2 py-1 font-mono text-[11px] text-fg-muted"
+                    className="rounded-[3px] border border-border-muted bg-elevated px-2 py-0.5 font-mono text-[11px] text-fg-muted"
                   >
                     {tag}
                   </li>
@@ -59,7 +61,7 @@ export function Projects() {
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-auto inline-flex pt-6 font-mono text-xs text-accent transition-colors hover:text-fg"
+                className="mt-auto inline-flex pt-6 font-mono text-xs font-medium text-fg underline underline-offset-4 decoration-border-muted transition-colors hover:decoration-fg"
               >
                 visit {project.name.toLowerCase()} ↗
               </a>
@@ -68,13 +70,13 @@ export function Projects() {
         ))}
       </div>
 
-      <Figure n={FIG.featured} className="mt-6">
+      <Figure n={FIG.featured} className="mt-6 text-fg-muted">
         Flagship work
       </Figure>
 
       <div className="mt-14 flex flex-wrap items-end justify-between gap-4 border-t border-border-muted pt-8">
         <div>
-          <h3 className="text-xl font-semibold text-fg">From GitHub</h3>
+          <h3 className="font-mono text-lg font-semibold text-fg">From GitHub</h3>
           <p className="mt-1 max-w-xl text-sm text-fg-muted">
             {source === "live"
               ? "Fetched live from the GitHub API."
@@ -85,7 +87,7 @@ export function Projects() {
           href={githubUrl}
           target="_blank"
           rel="noreferrer"
-          className="rounded-md border border-border px-3 py-2 font-mono text-xs text-fg-secondary transition-colors hover:border-accent hover:text-fg"
+          className="rounded-[4px] border border-border-muted px-3 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-fg hover:text-fg"
         >
           all repositories ↗
         </a>
@@ -98,7 +100,7 @@ export function Projects() {
               href={repo.url}
               target="_blank"
               rel="noreferrer"
-              className="flex h-full flex-col rounded-lg border border-border bg-surface p-5 transition-colors hover:border-accent"
+              className="flex h-full flex-col rounded-[4px] border border-border-muted bg-surface p-5 transition-colors hover:border-border"
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="truncate font-mono text-sm font-medium text-fg">

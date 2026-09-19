@@ -2,7 +2,6 @@ import { useState } from "react";
 import { info } from "@/data/info";
 import { FIG } from "@/lib/figures";
 import { Figure } from "./ui/Figure";
-import { PixelText } from "./ui/PixelText";
 import { Section } from "./ui/Section";
 
 /** First letters of the name, used when no avatar image is present yet. */
@@ -17,7 +16,7 @@ function initialsOf(name: string): string {
 }
 
 /**
- * About — avatar (falls back to pixel initials when `public/avatar.jpg` is
+ * About — avatar (falls back to clean monogram when `public/avatar.jpg` is
  * missing), the bio, and a few quick facts.
  */
 export function About() {
@@ -33,12 +32,10 @@ export function About() {
       <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-14">
         <div>
           {avatarMissing ? (
-            <div className="flex aspect-square w-full items-center justify-center rounded-lg border border-border bg-surface">
-              <PixelText
-                text={initialsOf(info.name)}
-                label={info.name}
-                className="w-1/2 text-border"
-              />
+            <div className="flex aspect-square w-full items-center justify-center rounded-[4px] border border-border bg-surface">
+              <span className="font-mono text-4xl font-bold tracking-tight text-fg-disabled">
+                {initialsOf(info.name)}
+              </span>
             </div>
           ) : (
             <img
@@ -49,7 +46,7 @@ export function About() {
               loading="lazy"
               decoding="async"
               onError={() => setAvatarMissing(true)}
-              className="aspect-square w-full rounded-lg border border-border bg-surface object-cover"
+              className="aspect-square w-full rounded-[4px] border border-border bg-surface object-cover"
             />
           )}
 
@@ -70,10 +67,10 @@ export function About() {
           <dl className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
             {info.facts.map((fact) => (
               <div key={fact.label} className="border-t border-border-muted pt-3">
-                <dt className="font-mono text-[11px] tracking-[0.16em] text-accent uppercase">
+                <dt className="font-mono text-[11px] tracking-[0.16em] text-fg-muted uppercase">
                   [*] {fact.label}
                 </dt>
-                <dd className="mt-1.5 text-fg">{fact.value}</dd>
+                <dd className="mt-1.5 font-mono text-sm text-fg">{fact.value}</dd>
               </div>
             ))}
           </dl>

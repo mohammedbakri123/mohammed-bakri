@@ -18,26 +18,26 @@ export function Experience() {
           <Reveal key={`${entry.company}-${entry.role}`} delay={index * 70}>
             <li className="relative pl-6 sm:pl-8">
               <span
-                className="absolute top-0 left-0 h-full w-px bg-border"
+                className="absolute top-0 left-0 h-full w-px bg-border-muted"
                 aria-hidden="true"
               />
               <span
-                className="absolute top-2 -left-[4.5px] size-2.5 rounded-full border-2 border-bg bg-accent"
+                className="absolute top-2 -left-[4.5px] size-2.5 rounded-full border-2 border-bg bg-fg"
                 aria-hidden="true"
               />
 
-              <p className="font-mono text-xs tracking-[0.16em] text-accent uppercase">
+              <p className="font-mono text-xs tracking-[0.16em] text-fg-muted uppercase">
                 {entry.period}
               </p>
 
-              <h3 className="mt-2 text-lg font-semibold text-fg">
+              <h3 className="mt-2 font-mono text-base font-semibold text-fg">
                 {entry.role}
                 <span className="text-fg-muted"> · </span>
                 <a
                   href={entry.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-fg-secondary underline decoration-border underline-offset-4 transition-colors hover:text-accent"
+                  className="text-fg-secondary underline decoration-border-muted underline-offset-4 transition-colors hover:text-fg hover:decoration-fg"
                 >
                   {entry.company}
                 </a>
@@ -47,12 +47,12 @@ export function Experience() {
                 {entry.location}
               </p>
 
-              <p className="mt-4 max-w-2xl text-fg-secondary">{entry.summary}</p>
+              <p className="mt-4 max-w-2xl font-mono text-sm leading-relaxed text-fg-secondary">{entry.summary}</p>
 
               <ul className="mt-4 space-y-2">
                 {entry.highlights.map((highlight) => (
-                  <li key={highlight} className="flex gap-3 text-sm text-fg-muted">
-                    <span className="font-mono text-accent" aria-hidden="true">
+                  <li key={highlight} className="flex gap-3 font-mono text-xs text-fg-muted">
+                    <span className="text-fg-disabled" aria-hidden="true">
                       [*]
                     </span>
                     <span>{highlight}</span>
