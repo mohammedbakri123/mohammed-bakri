@@ -1,4 +1,5 @@
 import { About } from "./components/About";
+import { Activity } from "./components/Activity";
 import { Contact } from "./components/Contact";
 import { Experience } from "./components/Experience";
 import { Footer } from "./components/Footer";
@@ -16,6 +17,7 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
+        <Activity />
         <Projects />
         <Experience />
         <Contact />
