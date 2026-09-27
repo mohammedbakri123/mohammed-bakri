@@ -2,7 +2,9 @@ import { useState } from "react";
 import { info } from "@/data/info";
 import { FIG } from "@/lib/figures";
 import { Figure } from "./ui/Figure";
+import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
+import { Terminal } from "./Terminal";
 
 /** First letters of the name, used when no avatar image is present yet. */
 function initialsOf(name: string): string {
@@ -16,8 +18,8 @@ function initialsOf(name: string): string {
 }
 
 /**
- * About — avatar (falls back to clean monogram when `public/avatar.jpg` is
- * missing), the bio, and a few quick facts.
+ * About — avatar (falls back to a clean monogram when `public/avatar.jpg` is
+ * missing), the bio, a few quick facts, and the interactive terminal.
  */
 export function About() {
   const [avatarMissing, setAvatarMissing] = useState(false);
@@ -30,52 +32,65 @@ export function About() {
       description="The short version — what I build, and with what."
     >
       <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-14">
-        <div>
-          {avatarMissing ? (
-            <div className="flex aspect-square w-full items-center justify-center rounded-[4px] border border-border bg-surface">
-              <span className="font-mono text-4xl font-bold tracking-tight text-fg-disabled">
-                {initialsOf(info.name)}
-              </span>
-            </div>
-          ) : (
-            <img
-              src={info.avatar}
-              alt={info.name}
-              width={520}
-              height={520}
-              loading="lazy"
-              decoding="async"
-              onError={() => setAvatarMissing(true)}
-              className="aspect-square w-full rounded-[4px] border border-border bg-surface object-cover"
-            />
-          )}
-
-          <Figure n={FIG.avatar} className="mt-3">
-            {avatarMissing
-              ? `Add your photo as public${info.avatar}`
-              : `${info.name} · ${info.location}`}
-          </Figure>
-        </div>
-
-        <div>
-          <div className="max-w-2xl space-y-4 text-fg-secondary">
-            {info.bio.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-
-          <dl className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-            {info.facts.map((fact) => (
-              <div key={fact.label} className="border-t border-border-muted pt-3">
-                <dt className="font-mono text-[11px] tracking-[0.16em] text-fg-muted uppercase">
-                  [*] {fact.label}
-                </dt>
-                <dd className="mt-1.5 font-mono text-sm text-fg">{fact.value}</dd>
+        <Reveal>
+          <div>
+            {avatarMissing ? (
+              <div className="flex aspect-square w-full items-center justify-center rounded-[4px] border border-border bg-surface">
+                <span className="font-mono text-4xl font-bold tracking-tight text-fg-disabled">
+                  {initialsOf(info.name)}
+                </span>
               </div>
-            ))}
-          </dl>
+            ) : (
+              <img
+                src={info.avatar}
+                alt={info.name}
+                width={520}
+                height={520}
+                loading="lazy"
+                decoding="async"
+                onError={() => setAvatarMissing(true)}
+                className="aspect-square w-full rounded-[4px] border border-border bg-surface object-cover"
+              />
+            )}
+
+            <Figure n={FIG.avatar} className="mt-3">
+              {avatarMissing
+                ? `Add your photo as public${info.avatar}`
+                : `${info.name} · ${info.location}`}
+            </Figure>
+          </div>
+        </Reveal>
+
+        <div>
+          <Reveal delay={70}>
+            <div className="prose max-w-2xl space-y-4 text-fg-secondary">
+              {info.bio.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={140}>
+            <dl className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+              {info.facts.map((fact) => (
+                <div key={fact.label} className="border-t border-border-muted pt-3">
+                  <dt className="font-mono text-[11px] tracking-[0.16em] text-fg-muted uppercase">
+                    [*] {fact.label}
+                  </dt>
+                  <dd className="mt-1.5 font-mono text-sm text-fg">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
         </div>
       </div>
+
+      <Reveal delay={80} className="mt-12 max-w-3xl">
+        <Terminal />
+        <Figure n={FIG.terminal} className="mt-3 text-fg-muted">
+          Ask it anything — the tabs run real commands
+        </Figure>
+      </Reveal>
     </Section>
   );
 }
