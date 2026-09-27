@@ -1,4 +1,5 @@
 import { info } from "@/data/info";
+import { cn } from "@/lib/cn";
 import { FIG } from "@/lib/figures";
 import { Figure } from "./ui/Figure";
 import { Reveal } from "./ui/Reveal";
@@ -22,7 +23,10 @@ export function Experience() {
                 aria-hidden="true"
               />
               <span
-                className="absolute top-2 -left-[4.5px] size-2.5 rounded-full border-2 border-bg bg-fg"
+                className={cn(
+                  "absolute top-2 -left-[4.5px] size-2.5 rounded-full border-2 border-bg bg-fg",
+                  entry.period.toLowerCase().includes("present") && "animate-pulse",
+                )}
                 aria-hidden="true"
               />
 
@@ -47,7 +51,7 @@ export function Experience() {
                 {entry.location}
               </p>
 
-              <p className="mt-4 max-w-2xl font-mono text-sm leading-relaxed text-fg-secondary">{entry.summary}</p>
+              <p className="prose mt-4 max-w-2xl text-sm text-fg-secondary">{entry.summary}</p>
 
               <ul className="mt-4 space-y-2">
                 {entry.highlights.map((highlight) => (

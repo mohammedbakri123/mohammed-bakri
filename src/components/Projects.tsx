@@ -26,7 +26,7 @@ export function Projects() {
           <Reveal key={project.name} delay={index * 70}>
             <article
               className={cn(
-                "flex h-full flex-col rounded-[4px] border bg-surface p-6 transition-all duration-200",
+                "group flex h-full flex-col rounded-[4px] border bg-surface p-6 transition-all duration-200 hover:-translate-y-0.5",
                 project.highlight
                   ? "border-fg/30 hover:border-fg"
                   : "border-border-muted hover:border-border",
@@ -44,7 +44,7 @@ export function Projects() {
                 </span>
               </div>
 
-              <p className="mt-4 text-fg-secondary leading-relaxed">{project.description}</p>
+              <p className="prose mt-4 text-fg-secondary">{project.description}</p>
 
               <ul className="mt-5 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
@@ -63,7 +63,10 @@ export function Projects() {
                 rel="noreferrer"
                 className="mt-auto inline-flex pt-6 font-mono text-xs font-medium text-fg underline underline-offset-4 decoration-border-muted transition-colors hover:decoration-fg"
               >
-                visit {project.name.toLowerCase()} ↗
+                <span>visit {project.name.toLowerCase()}</span>
+                <span className="ml-1 inline-block transition-transform duration-200 group-hover:translate-x-0.5">
+                  ↗
+                </span>
               </a>
             </article>
           </Reveal>
@@ -100,7 +103,7 @@ export function Projects() {
               href={repo.url}
               target="_blank"
               rel="noreferrer"
-              className="flex h-full flex-col rounded-[4px] border border-border-muted bg-surface p-5 transition-colors hover:border-border"
+              className="group flex h-full flex-col rounded-[4px] border border-border-muted bg-surface p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-border"
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="truncate font-mono text-sm font-medium text-fg">
@@ -113,7 +116,7 @@ export function Projects() {
                 ) : null}
               </div>
 
-              <p className="mt-3 line-clamp-3 flex-1 text-sm text-fg-muted">
+              <p className="prose mt-3 line-clamp-3 flex-1 text-sm text-fg-muted">
                 {repo.description ?? "No description provided."}
               </p>
 
