@@ -4,11 +4,14 @@ import { useReveal } from "@/lib/useReveal";
 import { useTypewriter } from "@/lib/useTypewriter";
 import { PixelText } from "./ui/PixelText";
 
+const [LINE_ONE, LINE_TWO] = info.wordmark;
+
 /**
- * Hero — full-width typographic composition. The pixel wordmark is the star,
- * and the terminal idea survives only as one unboxed prompt line: no window,
- * no tabs, no chrome. The answer prints the way shell output does — below the
- * command, revealed line by line.
+ * Hero — a stair-step poster. MOHAMMED runs the full measure, BAKRI indents
+ * flush right beneath it, and the notch the indent opens up is where the
+ * tagline and calls-to-action tuck in — text nested inside the wordmark's
+ * own silhouette. A vertical spine label rides the left edge, and the
+ * terminal survives as one unboxed prompt line.
  */
 export function Hero() {
   const { ref, visible } = useReveal<HTMLDivElement>(0.4);
@@ -23,6 +26,16 @@ export function Hero() {
         aria-hidden="true"
       />
 
+      {/* Spine label — reads bottom-up along the left edge */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-4 hidden items-center lg:flex"
+        aria-hidden="true"
+      >
+        <span className="rotate-180 font-mono text-[10px] tracking-[0.3em] text-fg-muted uppercase [writing-mode:vertical-rl]">
+          portfolio — 2026
+        </span>
+      </div>
+
       <div className="relative mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
         <div
           className="animate-rise font-mono text-xs tracking-[0.18em] text-fg-muted uppercase"
@@ -34,56 +47,64 @@ export function Hero() {
           </span>
         </div>
 
-        <h1 className="animate-rise mt-6" style={{ animationDelay: "80ms" }}>
-          <PixelText
-            lines={info.wordmark}
-            cell={8}
-            letterGap={1}
-            lineGap={2}
-            label={info.name}
-            className="w-full max-w-[46rem]"
-          />
-        </h1>
+        <h1 className="sr-only">{info.name}</h1>
 
-        <p
-          className="prose animate-rise mt-8 max-w-2xl text-lg text-fg-secondary sm:text-xl"
+        {/* Line one — the full measure */}
+        <div
+          className="animate-rise mt-6 w-full"
+          style={{ animationDelay: "80ms" }}
+          aria-hidden="true"
+        >
+          <PixelText lines={[LINE_ONE]} cell={8} letterGap={1} className="w-full" />
+        </div>
+
+        {/* The stair: notch content on the left, indented line two on the
+            right. BAKRI is 24 of the 42 columns line one occupies, so its
+            width (57.14%) keeps both rows on the exact same cell scale. */}
+        <div
+          className="animate-rise mt-[4.76%] flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-8"
           style={{ animationDelay: "160ms" }}
         >
-          {info.tagline}
-        </p>
+          <div className="order-2 min-w-0 lg:order-none lg:flex-1">
+            <p className="prose max-w-2xl text-lg text-fg-secondary sm:text-xl">
+              {info.tagline}
+            </p>
 
-        <div
-          className="animate-rise mt-9 flex flex-wrap items-center gap-3"
-          style={{ animationDelay: "240ms" }}
-        >
-          <a
-            href="#projects"
-            className="bg-fg px-5 py-2.5 font-mono text-xs font-medium tracking-wide text-bg transition-colors hover:bg-accent-hover"
-          >
-            view projects
-          </a>
-          <a
-            href="#contact"
-            className="border border-border px-5 py-2.5 font-mono text-xs font-medium tracking-wide text-fg-secondary transition-colors hover:border-fg hover:text-fg"
-          >
-            get in touch
-          </a>
-          {info.openToWork ? (
-            <span className="inline-flex items-center gap-2 border border-border-muted bg-surface px-3 py-2.5 font-mono text-xs text-fg-secondary">
-              <span
-                className="size-1.5 rounded-full bg-success animate-pulse"
-                aria-hidden="true"
-              />
-              open to work
-            </span>
-          ) : null}
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <a
+                href="#projects"
+                className="bg-fg px-5 py-2.5 font-mono text-xs font-medium tracking-wide text-bg transition-colors hover:bg-accent-hover"
+              >
+                view projects
+              </a>
+              <a
+                href="#contact"
+                className="border border-border px-5 py-2.5 font-mono text-xs font-medium tracking-wide text-fg-secondary transition-colors hover:border-fg hover:text-fg"
+              >
+                get in touch
+              </a>
+              {info.openToWork ? (
+                <span className="inline-flex items-center gap-2 border border-border-muted bg-surface px-3 py-2.5 font-mono text-xs text-fg-secondary">
+                  <span
+                    className="size-1.5 rounded-full bg-success animate-pulse"
+                    aria-hidden="true"
+                  />
+                  open to work
+                </span>
+              ) : null}
+            </div>
+          </div>
+
+          <div className="order-1 ml-auto w-[57.142857%] lg:order-none" aria-hidden="true">
+            <PixelText lines={[LINE_TWO]} cell={8} letterGap={1} className="w-full" />
+          </div>
         </div>
 
         {/* The prompt: terminal as typography, not as furniture. */}
         <div
           ref={ref}
           className="animate-rise mt-10 border-t border-border-muted pt-6 font-mono text-sm"
-          style={{ animationDelay: "320ms" }}
+          style={{ animationDelay: "240ms" }}
         >
           <p className="text-fg">
             <span className="text-fg-muted">$</span> {typedCommand}
