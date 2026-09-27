@@ -4,7 +4,6 @@ import { FIG } from "@/lib/figures";
 import { Figure } from "./ui/Figure";
 import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
-import { Terminal } from "./Terminal";
 
 /** First letters of the name, used when no avatar image is present yet. */
 function initialsOf(name: string): string {
@@ -19,7 +18,7 @@ function initialsOf(name: string): string {
 
 /**
  * About — avatar (falls back to a clean monogram when `public/avatar.jpg` is
- * missing), the bio, a few quick facts, and the interactive terminal.
+ * missing), the bio, and a few quick facts.
  */
 export function About() {
   const [avatarMissing, setAvatarMissing] = useState(false);
@@ -35,7 +34,7 @@ export function About() {
         <Reveal>
           <div>
             {avatarMissing ? (
-              <div className="flex aspect-square w-full items-center justify-center rounded-[4px] border border-border bg-surface">
+              <div className="flex aspect-square w-full items-center justify-center border border-border bg-surface">
                 <span className="font-mono text-4xl font-bold tracking-tight text-fg-disabled">
                   {initialsOf(info.name)}
                 </span>
@@ -49,7 +48,7 @@ export function About() {
                 loading="lazy"
                 decoding="async"
                 onError={() => setAvatarMissing(true)}
-                className="aspect-square w-full rounded-[4px] border border-border bg-surface object-cover"
+                className="aspect-square w-full border border-border bg-surface object-cover"
               />
             )}
 
@@ -84,13 +83,6 @@ export function About() {
           </Reveal>
         </div>
       </div>
-
-      <Reveal delay={80} className="mt-12 max-w-3xl">
-        <Terminal />
-        <Figure n={FIG.terminal} className="mt-3 text-fg-muted">
-          Ask it anything — the tabs run real commands
-        </Figure>
-      </Reveal>
     </Section>
   );
 }

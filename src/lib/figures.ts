@@ -3,15 +3,11 @@
  * single sequence down the page — the way opencode label their stats.
  */
 export const FIG = {
-  repos: 1,
-  stars: 2,
-  products: 3,
-  avatar: 4,
-  terminal: 5,
-  skills: 6,
-  activity: 7,
-  featured: 8,
-  projects: 9,
-  experience: 10,
-  contact: 11,
+  avatar: 1,
+  skills: 2,
+  activity: 3,
+  featured: 4,
+  projects: 5,
+  experience: 6,
+  contact: 7,
 } as const;
