@@ -83,7 +83,7 @@ export function ContributionGraph({ days, className }: ContributionGraphProps) {
   const activeDays = days.filter((day) => day.count > 0).length;
 
   return (
-    <div ref={ref} className={cn("terminal-scroll pb-1", className)}>
+    <div ref={ref} className={cn("no-scrollbar pb-1", className)}>
       <div
         className="min-w-max"
         role="img"
