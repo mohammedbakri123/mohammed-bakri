@@ -153,6 +153,13 @@
   }
 }
 
+/* Per-rect scaling for PixelText build-in: SVG rects need an explicit
+   transform box, otherwise scale() resolves against the root SVG. */
+.pixel-cell {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
 /* ---------------------------------------------------------------------------
    Base
    --------------------------------------------------------------------------- */
@@ -229,8 +236,10 @@
     *::before,
     *::after {
       animation-duration: 0.01ms !important;
+      animation-delay: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      transition-delay: 0.01ms !important;
     }
   }
 }

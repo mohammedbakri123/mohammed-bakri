@@ -137,6 +137,8 @@ interface PixelTextProps {
   lineGap?: number;
   /** Accessible label */
   label?: string;
+  /** Pop the cells in column-by-column on mount (hero load moment). */
+  build?: boolean;
   className?: string;
 }
 
@@ -145,6 +147,8 @@ interface PixelTextProps {
  * - Inner cells: #4B4646 (crisp warm charcoal)
  * - Stroke: sweeping from #8E8B8B / #B7B1B1 (warm mid-gray) to #F1ECEC (bright warm white)
  * - Zero blurry gradients: crisp, discrete vector pixel squares.
+ *
+ * Cells render as individual rects so `build` can animate them independently.
  */
 export function PixelText({
   text,
@@ -153,6 +157,7 @@ export function PixelText({
   letterGap = 1,
   lineGap = 2,
   label,
+  build = false,
   className,
 }: PixelTextProps) {
   const lineArray = lines ?? (text ? [text] : []);
@@ -165,24 +170,15 @@ export function PixelText({
   const width = columns * cell;
   const height = rows * cell;
 
-  // Inner cells: #4B4646 (opencode logo standard)
-  const innerPath = cells
-    .filter((entry) => entry.shade === "o")
-    .map((entry) => `M${entry.col * cell} ${entry.row * cell}h${cell}v${cell}h-${cell}Z`)
-    .join("");
+  // Stroke cells: first half of the letters run muted, second half bright.
+  const half = Math.ceil(cells[0].totalLetters / 2);
 
-  // Stroke cells: opencode two-tone / three-tone sweep
-  // First half of letters -> #B7B1B1 (mid warm gray)
-  // Second half of letters -> #F1ECEC (bright warm white)
-  const strokeMuted = cells
-    .filter((entry) => entry.shade === "#" && entry.letterIndex < Math.ceil(entry.totalLetters / 2))
-    .map((entry) => `M${entry.col * cell} ${entry.row * cell}h${cell}v${cell}h-${cell}Z`)
-    .join("");
-
-  const strokeBright = cells
-    .filter((entry) => entry.shade === "#" && entry.letterIndex >= Math.ceil(entry.totalLetters / 2))
-    .map((entry) => `M${entry.col * cell} ${entry.row * cell}h${cell}v${cell}h-${cell}Z`)
-    .join("");
+  const fillOf = (entry: PlacedCell) =>
+    entry.shade === "o"
+      ? "var(--pixel-inner, #4B4646)"
+      : entry.letterIndex < half
+        ? "var(--pixel-stroke-muted, #B7B1B1)"
+        : "var(--pixel-stroke-bright, #F1ECEC)";
 
   return (
     <svg
@@ -193,9 +189,24 @@ export function PixelText({
       preserveAspectRatio="xMinYMid meet"
       className={cn("block h-auto", className)}
     >
-      {innerPath ? <path d={innerPath} fill="var(--pixel-inner, #4B4646)" /> : null}
-      {strokeMuted ? <path d={strokeMuted} fill="var(--pixel-stroke-muted, #B7B1B1)" /> : null}
-      {strokeBright ? <path d={strokeBright} fill="var(--pixel-stroke-bright, #F1ECEC)" /> : null}
+      {cells.map((entry) => (
+        <rect
+          key={`${entry.col}-${entry.row}`}
+          x={entry.col * cell}
+          y={entry.row * cell}
+          width={cell}
+          height={cell}
+          fill={fillOf(entry)}
+          className={build ? "pixel-cell animate-cell" : undefined}
+          style={
+            build
+              ? {
+                  animationDelay: `${Math.min(entry.col * 14 + entry.row * 6, 700)}ms`,
+                }
+              : undefined
+          }
+        />
+      ))}
     </svg>
   );
 }
