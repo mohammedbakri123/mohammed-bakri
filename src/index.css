@@ -247,12 +247,6 @@
   background-size: 44px 44px;
 }
 
-/* Terminal window body — monospace, slightly tinted, scrollable. */
-@utility terminal-scroll {
-  overflow-x: auto;
-  scrollbar-width: thin;
-}
-
 /* Horizontal scroller that keeps its scrollbar out of sight — touch and
    trackpad still scroll it. Used by the contribution graph on mobile. */
 @utility no-scrollbar {
