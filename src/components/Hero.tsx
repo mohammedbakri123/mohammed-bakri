@@ -32,7 +32,6 @@ export function Hero() {
                 letterGap={1}
                 lineGap={2}
                 label={info.name}
-                build
                 className="w-full max-w-[400px] sm:max-w-[520px]"
               />
             </h1>
