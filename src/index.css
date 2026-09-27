@@ -32,6 +32,10 @@
   --cal-2: #807854;
   --cal-3: #b8b078;
   --cal-4: #fcfee5;
+
+  /* Atmosphere — film grain + vignette over the whole page */
+  --grain-opacity: 0.045;
+  --vignette: 0.14;
 }
 
 /* OpenCode Light Mode (warm cream canvas with rich ink) */
@@ -63,6 +67,9 @@
   --cal-2: #b3ab84;
   --cal-3: #7b7454;
   --cal-4: #26231f;
+
+  --grain-opacity: 0.05;
+  --vignette: 0.05;
 }
 
 /* ---------------------------------------------------------------------------
@@ -167,6 +174,32 @@
   ::selection {
     background-color: var(--color-accent);
     color: var(--color-accent-fg);
+  }
+
+  /* Atmosphere: static film grain over everything, then a soft vignette.
+     Both are fixed, transparent to input, and purely decorative. */
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  body::before {
+    opacity: var(--grain-opacity);
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+  }
+
+  body::after {
+    background: radial-gradient(
+      130% 100% at 50% 35%,
+      transparent 55%,
+      rgba(0, 0, 0, var(--vignette)) 100%
+    );
   }
 
   :focus-visible {
