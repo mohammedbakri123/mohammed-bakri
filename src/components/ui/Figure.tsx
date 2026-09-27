@@ -13,7 +13,7 @@ export function Figure({ n, children, className }: FigureProps) {
   return (
     <p
       className={cn(
-        "font-mono text-[11px] tracking-[0.16em] text-fg-disabled uppercase",
+        "font-mono text-[11px] tracking-[0.16em] text-fg-muted uppercase",
         className,
       )}
     >

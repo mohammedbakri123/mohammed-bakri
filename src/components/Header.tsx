@@ -56,6 +56,10 @@ export function Header() {
       root.classList.remove("light");
       root.classList.add("dark");
     }
+    root.style.colorScheme = theme;
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme === "light" ? "#fdfcfc" : "#131010");
     localStorage.setItem("theme", theme);
   }, [theme]);
 

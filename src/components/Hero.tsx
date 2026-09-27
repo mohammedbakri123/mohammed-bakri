@@ -21,7 +21,7 @@ export function Hero() {
               className="animate-rise font-mono text-xs tracking-[0.18em] text-fg-muted uppercase"
               style={{ animationDelay: "0ms" }}
             >
-              <span className="text-fg-disabled">[*]</span>{" "}
+              <span className="text-fg-muted">[*]</span>{" "}
               <span>{info.intro} · {info.location}</span>
             </div>
 

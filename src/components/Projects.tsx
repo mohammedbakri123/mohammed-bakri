@@ -105,7 +105,7 @@ export function Projects() {
               rel="noreferrer"
               className="group flex items-center gap-3 border-b border-border-muted/60 px-2 py-3.5 transition-colors hover:bg-surface sm:gap-4 sm:px-3"
             >
-              <span className="w-9 shrink-0 text-right font-mono text-[11px] text-fg-disabled transition-colors group-hover:text-warning">
+              <span className="w-9 shrink-0 text-right font-mono text-[11px] text-fg-muted transition-colors group-hover:text-warning">
                 {repo.stars > 0 ? `★${repo.stars}` : "—"}
               </span>
 
@@ -128,7 +128,7 @@ export function Projects() {
                 )}
               </span>
 
-              <span className="w-24 shrink-0 text-right font-mono text-[11px] text-fg-disabled">
+              <span className="w-24 shrink-0 text-right font-mono text-[11px] text-fg-muted">
                 {formatUpdated(repo.updatedAt)}
               </span>
 

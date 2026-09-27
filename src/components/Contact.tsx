@@ -44,7 +44,7 @@ export function Contact() {
                   </span>
                 </a>
               ) : (
-                <p className="inline-flex border border-border-muted px-4 py-2.5 font-mono text-xs text-fg-disabled">
+                <p className="inline-flex border border-border-muted px-4 py-2.5 font-mono text-xs text-fg-muted">
                   set "email" in src/data/info.json to show a mailto link
                 </p>
               )}
@@ -73,7 +73,7 @@ export function Contact() {
                   className="flex items-center justify-between gap-4 border border-border-muted bg-surface px-4 py-3.5 transition-colors hover:border-border hover:bg-elevated/50"
                 >
                   <span className="font-mono text-sm text-fg">
-                    <span className="text-fg-disabled">[*]</span> {social.label}
+                    <span className="text-fg-muted">[*]</span> {social.label}
                   </span>
                   <span className="truncate font-mono text-xs text-fg-secondary">
                     {social.handle} ↗

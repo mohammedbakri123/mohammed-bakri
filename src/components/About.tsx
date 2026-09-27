@@ -36,7 +36,7 @@ export function About() {
           <div>
             {avatarMissing ? (
               <div className="flex aspect-square w-full items-center justify-center border border-border bg-surface">
-                <span className="font-mono text-4xl font-bold tracking-tight text-fg-disabled">
+                <span className="font-mono text-4xl font-bold tracking-tight text-fg-muted">
                   {initialsOf(info.name)}
                 </span>
               </div>

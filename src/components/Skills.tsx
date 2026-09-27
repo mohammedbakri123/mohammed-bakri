@@ -25,7 +25,7 @@ export function Skills() {
           <p className="truncate font-mono text-xs">
             <span className="text-fg-muted">$</span> ls stack/
           </p>
-          <p className="shrink-0 font-mono text-[10px] tracking-[0.14em] text-fg-disabled uppercase">
+          <p className="shrink-0 font-mono text-[10px] tracking-[0.14em] text-fg-muted uppercase">
             {info.skills.length} groups · {total} tools
           </p>
         </div>

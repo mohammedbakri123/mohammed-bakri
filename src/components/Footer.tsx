@@ -36,7 +36,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-border-muted pt-6 font-mono text-[11px] text-fg-disabled">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-border-muted pt-6 font-mono text-[11px] text-fg-muted">
           <p>
             © {year} {info.name}
           </p>

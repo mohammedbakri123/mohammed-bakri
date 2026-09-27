@@ -71,7 +71,7 @@ export function Terminal() {
             </button>
           ))}
         </div>
-        <span className="font-mono text-[10px] text-fg-disabled hidden sm:inline">
+        <span className="font-mono text-[10px] text-fg-muted hidden sm:inline">
           bash · interactive
         </span>
       </div>

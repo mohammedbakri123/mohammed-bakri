@@ -47,7 +47,7 @@ export function Experience() {
                 </a>
               </h3>
 
-              <p className="mt-1 font-mono text-[11px] text-fg-disabled">
+              <p className="mt-1 font-mono text-[11px] text-fg-muted">
                 {entry.location}
               </p>
 
@@ -56,7 +56,7 @@ export function Experience() {
               <ul className="mt-4 space-y-2">
                 {entry.highlights.map((highlight) => (
                   <li key={highlight} className="flex gap-3 font-mono text-xs text-fg-muted">
-                    <span className="text-fg-disabled" aria-hidden="true">
+                    <span className="text-fg-muted" aria-hidden="true">
                       [*]
                     </span>
                     <span>{highlight}</span>
