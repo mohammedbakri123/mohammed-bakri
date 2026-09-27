@@ -11,9 +11,9 @@
   "openToWork": true,
   "tagline": "Building scalable software and practical AI-powered solutions.",
   "bio": [
-    "I'm Mohammed — a computer science student and software developer based in Sana'a, Yemen. I build web applications, REST APIs, database-driven systems and mobile apps, and I'm happiest working on the backend.",
-    "Most of my time goes into Tabib, a clinic management system I founded and build end-to-end. Alongside that I work across ASP.NET Core, React and TypeScript, Flutter, and practical AI applications with Python, NumPy and Scikit-learn.",
-    "I'm interested in software architecture, scalable systems and machine learning — especially the places where those three meet."
+    "I'm Mohammed — a CS student and software developer in Sana'a, Yemen, building web apps, REST APIs, database-driven systems and mobile apps. I'm happiest on the backend.",
+    "Most of my time goes into Tabib, the clinic management system I founded and build end-to-end. Elsewhere: ASP.NET Core, React and TypeScript, Flutter, and practical AI with Python.",
+    "I care about software architecture, scalable systems and machine learning — especially where the three meet."
   ],
   "facts": [
     { "label": "Founded", "value": "Tabib — clinic management system" },
