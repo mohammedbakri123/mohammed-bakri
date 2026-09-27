@@ -36,7 +36,7 @@ export function Contact() {
               {email ? (
                 <a
                   href={`mailto:${email}`}
-                  className="group inline-flex items-center gap-2 rounded-[4px] bg-fg px-4 py-2.5 font-mono text-xs font-medium tracking-wide text-bg transition-colors hover:bg-accent-hover"
+                  className="group inline-flex items-center gap-2 bg-fg px-4 py-2.5 font-mono text-xs font-medium tracking-wide text-bg transition-colors hover:bg-accent-hover"
                 >
                   <span>{email}</span>
                   <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">
@@ -44,7 +44,7 @@ export function Contact() {
                   </span>
                 </a>
               ) : (
-                <p className="inline-flex rounded-[4px] border border-border-muted px-4 py-2.5 font-mono text-xs text-fg-disabled">
+                <p className="inline-flex border border-border-muted px-4 py-2.5 font-mono text-xs text-fg-disabled">
                   set "email" in src/data/info.json to show a mailto link
                 </p>
               )}
@@ -53,7 +53,7 @@ export function Contact() {
                 href="https://wa.me/967774446941"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-[4px] border border-border-muted bg-surface px-4 py-2.5 font-mono text-xs font-medium tracking-wide text-fg transition-colors hover:border-fg"
+                className="inline-flex items-center gap-2 border border-border-muted bg-surface px-4 py-2.5 font-mono text-xs font-medium tracking-wide text-fg transition-colors hover:border-fg"
               >
                 <span className="size-1.5 rounded-full bg-success" />
                 <span>WhatsApp: +967 774 446 941 ↗</span>
@@ -70,7 +70,7 @@ export function Contact() {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between gap-4 rounded-[4px] border border-border-muted bg-surface px-4 py-3.5 transition-colors hover:border-border hover:bg-elevated/50"
+                  className="flex items-center justify-between gap-4 border border-border-muted bg-surface px-4 py-3.5 transition-colors hover:border-border hover:bg-elevated/50"
                 >
                   <span className="font-mono text-sm text-fg">
                     <span className="text-fg-disabled">[*]</span> {social.label}

@@ -41,7 +41,7 @@ export function Activity() {
       title="In the loop"
       description="A year of daily commits and reviews — the honest record behind the projects below."
     >
-      <div className="rounded-[4px] border border-border-muted bg-bg p-4 sm:p-6">
+      <div className="border border-border-muted bg-bg p-4 sm:p-6">
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
           <dl className="grid grid-cols-2 gap-x-8 gap-y-5 sm:grid-cols-4 sm:gap-x-12">
             {items.map((item) => (
@@ -60,7 +60,7 @@ export function Activity() {
             href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
-            className="rounded-[4px] border border-border-muted px-3 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-fg hover:text-fg"
+            className="border border-border-muted px-3 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-fg hover:text-fg"
           >
             view on GitHub ↗
           </a>
@@ -78,7 +78,7 @@ export function Activity() {
           <div className="flex items-center gap-1.5 font-mono text-[10px] text-fg-muted">
             <span className="mr-1">less</span>
             {LEGEND_LEVELS.map((level) => (
-              <span key={level} className={`size-[9px] rounded-[2px] ${level}`} aria-hidden="true" />
+              <span key={level} className={`size-[9px] ${level}`} aria-hidden="true" />
             ))}
             <span className="ml-1">more</span>
           </div>

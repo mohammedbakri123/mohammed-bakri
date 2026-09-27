@@ -135,7 +135,7 @@ export function ContributionGraph({ days, className }: ContributionGraphProps) {
                       }}
                       onMouseLeave={() => setHover(null)}
                       className={cn(
-                        "size-[11px] cursor-pointer rounded-[2px] transition-transform duration-150 hover:scale-[1.35]",
+                        "size-[11px] cursor-pointer transition-transform duration-150 hover:scale-[1.35]",
                         LEVEL_CLASS[day.level] ?? LEVEL_CLASS[0],
                         visible ? "animate-cell" : "opacity-0",
                       )}
@@ -150,7 +150,7 @@ export function ContributionGraph({ days, className }: ContributionGraphProps) {
 
             {hover ? (
               <div
-                className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-[3px] border border-border bg-elevated px-2 py-1 font-mono text-[10px] whitespace-nowrap text-fg shadow-lg"
+                className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full border border-border bg-elevated px-2 py-1 font-mono text-[10px] whitespace-nowrap text-fg shadow-lg"
                 style={{ left: hover.x, top: hover.y - 6 }}
               >
                 {DAY_FORMAT.format(parseDay(hover.day.date))}

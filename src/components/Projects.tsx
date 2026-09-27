@@ -26,7 +26,7 @@ export function Projects() {
           <Reveal key={project.name} delay={index * 70}>
             <article
               className={cn(
-                "group flex h-full flex-col rounded-[4px] border bg-surface p-6 transition-all duration-200 hover:-translate-y-0.5",
+                "group flex h-full flex-col border bg-surface p-6 transition-all duration-200 hover:-translate-y-0.5",
                 project.highlight
                   ? "border-fg/30 hover:border-fg"
                   : "border-border-muted hover:border-border",
@@ -39,7 +39,7 @@ export function Projects() {
                   </h3>
                   <p className="mt-1 text-sm text-fg-muted">{project.tagline}</p>
                 </div>
-                <span className="shrink-0 rounded-[3px] border border-border-muted px-2 py-0.5 font-mono text-[10px] tracking-[0.14em] text-fg-muted uppercase">
+                <span className="shrink-0 border border-border-muted px-2 py-0.5 font-mono text-[10px] tracking-[0.14em] text-fg-muted uppercase">
                   {project.status}
                 </span>
               </div>
@@ -50,7 +50,7 @@ export function Projects() {
                 {project.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-[3px] border border-border-muted bg-elevated px-2 py-0.5 font-mono text-[11px] text-fg-muted"
+                    className="border border-border-muted bg-elevated px-2 py-0.5 font-mono text-[11px] text-fg-muted"
                   >
                     {tag}
                   </li>
@@ -90,7 +90,7 @@ export function Projects() {
           href={githubUrl}
           target="_blank"
           rel="noreferrer"
-          className="rounded-[4px] border border-border-muted px-3 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-fg hover:text-fg"
+          className="border border-border-muted px-3 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-fg hover:text-fg"
         >
           all repositories ↗
         </a>
@@ -103,7 +103,7 @@ export function Projects() {
               href={repo.url}
               target="_blank"
               rel="noreferrer"
-              className="group flex h-full flex-col rounded-[4px] border border-border-muted bg-surface p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-border"
+              className="group flex h-full flex-col border border-border-muted bg-surface p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-border"
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="truncate font-mono text-sm font-medium text-fg">

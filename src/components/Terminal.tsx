@@ -50,7 +50,7 @@ export function Terminal() {
   return (
     <div
       ref={ref}
-      className="overflow-hidden rounded-[4px] border border-border-muted bg-surface shadow-2xl"
+      className="overflow-hidden border border-border-muted bg-surface shadow-2xl"
     >
       {/* Tab bar with clickable command tabs */}
       <div className="flex items-center justify-between border-b border-border-muted bg-elevated/40 px-3 py-2">
@@ -61,7 +61,7 @@ export function Terminal() {
               type="button"
               onClick={() => setActiveTab(tab)}
               className={cn(
-                "rounded-[3px] px-2.5 py-1 text-[11px] font-mono transition-colors",
+                "px-2.5 py-1 text-[11px] font-mono transition-colors",
                 activeTab === tab
                   ? "bg-surface text-fg font-semibold border border-border-muted"
                   : "text-fg-muted hover:text-fg hover:bg-surface/50",

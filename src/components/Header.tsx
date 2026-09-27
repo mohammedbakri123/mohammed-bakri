@@ -164,7 +164,7 @@ export function Header() {
               type="button"
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="flex items-center gap-1.5 rounded-[4px] border border-border-muted bg-surface px-2.5 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-border hover:text-fg"
+              className="flex items-center gap-1.5 border border-border-muted bg-surface px-2.5 py-1.5 font-mono text-xs text-fg-secondary transition-colors hover:border-border hover:text-fg"
             >
               {theme === "dark" ? (
                 <Sun className="size-3.5 text-fg-secondary" />
@@ -178,7 +178,7 @@ export function Header() {
               href={GITHUB_URL}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 rounded-[4px] bg-fg px-3.5 py-1.5 font-mono text-xs font-medium text-bg transition-colors hover:bg-accent-hover"
+              className="flex items-center gap-2 bg-fg px-3.5 py-1.5 font-mono text-xs font-medium text-bg transition-colors hover:bg-accent-hover"
             >
               <span>GitHub</span>
               <span>↗</span>
@@ -193,7 +193,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub profile"
-            className="flex items-center justify-center size-8 rounded-[4px] border border-border-muted bg-surface text-fg-secondary transition-colors hover:border-border hover:text-fg"
+            className="flex items-center justify-center size-8 border border-border-muted bg-surface text-fg-secondary transition-colors hover:border-border hover:text-fg"
           >
             <GithubMark className="size-4" />
           </a>
@@ -202,7 +202,7 @@ export function Header() {
             type="button"
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            className="flex items-center justify-center size-8 rounded-[4px] border border-border-muted bg-surface text-fg-secondary transition-colors hover:border-border hover:text-fg"
+            className="flex items-center justify-center size-8 border border-border-muted bg-surface text-fg-secondary transition-colors hover:border-border hover:text-fg"
           >
             {theme === "dark" ? (
               <Sun className="size-4" />
