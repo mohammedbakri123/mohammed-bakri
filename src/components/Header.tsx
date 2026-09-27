@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { info } from "@/data/info";
 import { cn } from "@/lib/cn";
@@ -37,6 +37,7 @@ const GITHUB_URL =
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
+  const progressRef = useRef<HTMLDivElement>(null);
 
   const [theme, setTheme] = useState<"dark" | "light">(() => {
     if (typeof window !== "undefined") {
@@ -68,7 +69,18 @@ export function Header() {
   };
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 8);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 8);
+
+      // Progress hairline — written straight to the DOM so scrolling
+      // never triggers a re-render.
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      if (progressRef.current) {
+        progressRef.current.style.transform = `scaleX(${progress})`;
+      }
+    };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -216,6 +228,14 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      {/* Scroll progress hairline — hugs the header's bottom edge */}
+      <div
+        ref={progressRef}
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-fg"
+        style={{ transform: "scaleX(0)", willChange: "transform" }}
+      />
     </header>
   );
 }
