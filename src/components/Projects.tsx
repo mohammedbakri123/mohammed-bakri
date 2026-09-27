@@ -96,50 +96,55 @@ export function Projects() {
         </a>
       </div>
 
-      <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 border-t border-border-muted/60">
         {repos.map((repo, index) => (
-          <Reveal key={repo.name} delay={Math.min(index, 5) * 50}>
+          <Reveal key={repo.name} delay={Math.min(index, 5) * 45}>
             <a
               href={repo.url}
               target="_blank"
               rel="noreferrer"
-              className="group flex h-full flex-col border border-border-muted bg-surface p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-border"
+              className="group flex items-center gap-3 border-b border-border-muted/60 px-2 py-3.5 transition-colors hover:bg-surface sm:gap-4 sm:px-3"
             >
-              <div className="flex items-center justify-between gap-3">
-                <span className="truncate font-mono text-sm font-medium text-fg">
-                  {repo.name}
-                </span>
-                {repo.stars > 0 ? (
-                  <span className="shrink-0 font-mono text-xs text-warning">
-                    ★ {repo.stars}
-                  </span>
-                ) : null}
-              </div>
+              <span className="w-9 shrink-0 text-right font-mono text-[11px] text-fg-disabled transition-colors group-hover:text-warning">
+                {repo.stars > 0 ? `★${repo.stars}` : "—"}
+              </span>
 
-              <p className="prose mt-3 line-clamp-3 flex-1 text-sm text-fg-muted">
-                {repo.description ?? "No description provided."}
-              </p>
+              <span className="min-w-0 flex-1 truncate font-mono text-sm text-fg transition-colors group-hover:text-accent">
+                {repo.name}
+              </span>
 
-              <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] text-fg-disabled">
+              <span className="hidden w-28 shrink-0 items-center gap-1.5 font-mono text-[11px] text-fg-muted sm:flex">
                 {repo.language ? (
-                  <span className="inline-flex items-center gap-1.5">
+                  <>
                     <span
-                      className="size-2 rounded-full"
+                      className="size-2 shrink-0"
                       style={{ backgroundColor: languageColor(repo.language) }}
                       aria-hidden="true"
                     />
                     {repo.language}
-                  </span>
-                ) : null}
-                <span>updated {formatUpdated(repo.updatedAt)}</span>
-              </div>
+                  </>
+                ) : (
+                  "—"
+                )}
+              </span>
+
+              <span className="w-24 shrink-0 text-right font-mono text-[11px] text-fg-disabled">
+                {formatUpdated(repo.updatedAt)}
+              </span>
+
+              <span
+                aria-hidden="true"
+                className="shrink-0 font-mono text-xs text-fg-muted opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100"
+              >
+                ↗
+              </span>
             </a>
           </Reveal>
         ))}
       </div>
 
       <Figure n={FIG.projects} className="mt-8">
-        {repos.length} repositories, most relevant first
+        Top {repos.length} repositories, most relevant first
       </Figure>
     </Section>
   );
