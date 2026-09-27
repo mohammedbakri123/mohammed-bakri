@@ -2,6 +2,7 @@ import { useState } from "react";
 import { info } from "@/data/info";
 import { FIG } from "@/lib/figures";
 import { Figure } from "./ui/Figure";
+import { PixelLens } from "./ui/PixelLens";
 import { Reveal } from "./ui/Reveal";
 import { Section } from "./ui/Section";
 
@@ -40,15 +41,10 @@ export function About() {
                 </span>
               </div>
             ) : (
-              <img
+              <PixelLens
                 src={info.avatar}
                 alt={info.name}
-                width={520}
-                height={520}
-                loading="lazy"
-                decoding="async"
                 onError={() => setAvatarMissing(true)}
-                className="aspect-square w-full border border-border bg-surface object-cover"
               />
             )}
 
