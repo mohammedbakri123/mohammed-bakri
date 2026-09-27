@@ -36,6 +36,7 @@
   /* Atmosphere — film grain + vignette over the whole page */
   --grain-opacity: 0.045;
   --vignette: 0.14;
+  --scanline-alpha: 0.16;
 }
 
 /* OpenCode Light Mode (warm cream canvas with rich ink) */
@@ -70,6 +71,7 @@
 
   --grain-opacity: 0.05;
   --vignette: 0.05;
+  --scanline-alpha: 0.08;
 }
 
 /* ---------------------------------------------------------------------------
@@ -247,6 +249,15 @@
     linear-gradient(to right, var(--color-border-muted) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-border-muted) 1px, transparent 1px);
   background-size: 44px 44px;
+}
+
+/* CRT scanlines — thin horizontal bands drawn over the hero's shell. */
+@utility scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 2px,
+    rgb(0 0 0 / var(--scanline-alpha)) 2px 3px
+  );
 }
 
 /* Horizontal scroller that keeps its scrollbar out of sight — touch and
